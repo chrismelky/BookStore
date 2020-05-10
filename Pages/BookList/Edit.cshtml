@@ -1,0 +1,54 @@
+﻿@page
+@model asprazor.Pages.BookList.EditModel
+
+
+<div class="border container p-3">
+    <h2 class="text-info">Edit a Book</h2>
+    <div class="p-3 mt-3">
+    <form method="post">
+        <input type="hidden" asp-for="Book.Id" />
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="row form-group">
+            <div class="col-3">
+                <label asp-for="Book.Name"></label>
+            </div>
+            <div class="col-9">
+                <input asp-for="Book.Name" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Book.Name"></span>
+        </div>
+        <div class="row form-group">
+            <div class="col-3">
+                <label asp-for="Book.Author"></label>
+            </div>
+            <div class="col-9">
+                <input asp-for="Book.Author" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-3">
+                <label asp-for="Book.ISBN"></label>
+            </div>
+            <div class="col-9">
+                <input asp-for="Book.ISBN" class="form-control" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-3">
+                <label asp-for="Book.PublishDate"></label>
+            </div>
+            <div class="col-9">
+                <input asp-for="Book.PublishDate" class="form-control" />
+            </div>
+            <span class="text-danger" asp-validation-for="Book.PublishDate"></span>
+
+        </div>
+         <div class="row form-action mt-3">
+                <button class="btn btn-info float-right" type="submit">Save</button>
+         </div>
+    </form>
+    </div>
+</div>
+@section Scripts{
+   <partial name="_ValidationScriptsPartial" />
+}
